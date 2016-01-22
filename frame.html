@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="blockly_compressed.js"></script>
+    <script type="text/javascript" src="blocks_compressed.js"></script>
+    <script type="text/javascript" src="blocks_sl_uncompressed.js"></script> 
+    <script type="text/javascript" src="msg/js/en.js"></script>
+    <script type="text/javascript" src="generators/lua.js"></script>
+    <script type="text/javascript" src="generators/lua/math.js"></script>
+    <script type="text/javascript" src="generators/icesl.js"></script>
+    <script type="text/javascript" src="generators/icesl/csg.js"></script>
+    <style>
+      html, body {
+        background-color: #fff;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        height: 100%;
+      }
+      .blocklySvg {
+        height: 100%;
+        width: 100%;
+      }
+    </style>
+    <script>
+      function init() {
+        Blockly.inject(document.body,
+            {path: '../../', toolbox: document.getElementById('toolbox')});
+        // Let the top-level application know that Blockly is ready.
+        window.parent.blocklyLoaded(Blockly);
+      }
+    </script>
+  </head>
+  <body onload="init()">
+    <xml id="toolbox" style="display: none">
+<!--      <category name="3D"> -->
+	<block type="csg_box">
+	  <value name="SIZE">
+	    <block type="math_number">
+	      <field name="NUM">1</field>
+	    </block>
+	  </value>
+        </block>
+	<block type="csg_translate"></block>
+<!--      </category> -->
+<!--      <category name="Math"> -->
+	<block type="math_number"></block>
+	<block type="math_arithmetic"></block>
+<!--      </category> -->
+    </xml>
+  </body>
+</html>

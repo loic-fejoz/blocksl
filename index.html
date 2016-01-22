@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>BlockSL</title>
+    <script type="text/javascript" src="blockly_compressed.js"></script>
+  </head>
+
+  <body>
+    <h1>BlockSL</h1>
+
+    <script type="text/javascript"  >
+    function blocklyLoaded(blockly) {
+      // Called once Blockly is fully loaded.
+      window.Blockly = blockly;
+    }
+
+    function showCode() {
+      // Generate IceSL code and display it.
+      window.Blockly.IceSL.INFINITE_LOOP_TRAP = null;
+      var code = window.Blockly.IceSL.workspaceToCode();
+      alert(code);
+    }
+    </script>
+    <p>
+      <button onclick="showCode()">Show IceSL</button>
+    </p>
+    <iframe src="frame.html" style="height: 100%; width: 100%; min-height: 400px;" ></iframe>
+
+    <hr />
+    <address><a href="mailto:loic@fejoz.net">Loïc</a></address>
+<!-- Created: Sun Dec 22 18:36:38 CET 2013 -->
+<!-- hhmts start -->
+Last modified: Tue Dec 24 16:53:26 CET 2013
+<!-- hhmts end -->
+  </body>
+</html>
