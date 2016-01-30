@@ -34,20 +34,34 @@
   </head>
   <body onload="init()">
     <xml id="toolbox" style="display: none">
-<!--      <category name="3D"> -->
-	<block type="csg_box">
-	  <value name="SIZE">
-	    <block type="math_number">
-	      <field name="NUM">1</field>
-	    </block>
-	  </value>
-        </block>
-	<block type="csg_translate"></block>
-<!--      </category> -->
-<!--      <category name="Math"> -->
+      <category name="3D CSG">
+	<block type="csg_emit"></block>
+	<category name="primitives">
+	  <block type="csg_box">
+	    <value name="SIZE">
+	      <block type="math_number">
+		<field name="NUM">1</field>
+	      </block>
+	    </value>
+	  </block>
+	</category>
+	<category name="modifiers">
+	  <block type="csg_translate">
+	    <value name="VECTOR">
+	      <block type="csg_vector">
+		<field name="X">0</field>
+		<field name="Y">0</field>
+		<field name="Z">0</field>		
+	      </block>
+	    </value>
+	  </block>
+	  <block type="csg_rotate"></block>
+	</category>
+      </category>
+      <category name="Math">
 	<block type="math_number"></block>
 	<block type="math_arithmetic"></block>
-<!--      </category> -->
+      </category>
     </xml>
   </body>
 </html>
